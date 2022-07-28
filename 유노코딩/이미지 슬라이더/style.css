@@ -17,6 +17,8 @@ h1{
     position: relative;
     display: flex;
     height: 400px;
+
+    transition: transform 0.5s;
 }
 
 img{

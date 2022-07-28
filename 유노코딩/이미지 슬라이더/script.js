@@ -7,16 +7,21 @@ const nextBtn = document.querySelector(".next");
 const images = document.querySelector(".images");
 
 function next(){
-    if(curPos < 3){
+    if(curPos > 0){
         prevBtn.removeAttribute('disabled')
-        positoinValue -= IMAGE_WIDTH;
+        positoinValue += IMAGE_WIDTH;
         images.style.transform = 'translateX(${positionValue}px)';
-        curPos += 1;
+        curPos -= 1;
     }
+}
+
+if(curPos === 0){
+    nextBtn.setAttribute('disabled', 'true');
 }
 
 function init(){
     prevBtn.setAttribute('disabled', 'true');  // .setAttribute()는 선택한 요소(element)의 속성(attribute) 값을 정합니다
+    prevBtn.addEventListener("click", prev);
     nextBtn.addEventListener("click", next);
 }
 
