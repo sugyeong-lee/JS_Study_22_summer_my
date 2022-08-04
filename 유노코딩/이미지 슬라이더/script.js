@@ -10,7 +10,7 @@ function next(){
     if(curPos > 0){
         prevBtn.removeAttribute('disabled')
         positoinValue += IMAGE_WIDTH;
-        images.style.transform = 'translateX(${positionValue}px)';
+        images.style.transform = `translateX(${positionValue}px)`;
         curPos -= 1;
     }
 }
