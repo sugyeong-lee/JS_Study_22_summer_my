@@ -1,5 +1,8 @@
+const numbersDiv = document.querySelector(".list")
+const recordButton = document.querySelector("#record")
+const recordList = []
+
 function printClock() {
-    
     var clock = document.getElementById("clock");
     var currentDate = new Date();
     var amPm = 'AM';          
@@ -31,6 +34,14 @@ function addZeros(num, digit) {
 	  return zero + num;
 }
 
-function record(num, digit) {
-  clock.innerHTML = Hours+":"+Minute+":"+Seconds +" <span style='font-size:50px;'>"+ amPm+"</span>";
+recordButton.addEventListener("click", function(){
+  clockscan = Hours+":"+Minute+":"+Seconds +" <span style='font-size:50px;'>"+ amPm+"</span>";
+  recordList.push(clockscan)
+  paintTime(clockscan)
+})
+
+function paintTime(number){
+  const eachNumDiv = document.createElement("div")
+  eachNumDiv.textContent = number
+  numbersDiv.appendChild(eachNumDiv)
 }
